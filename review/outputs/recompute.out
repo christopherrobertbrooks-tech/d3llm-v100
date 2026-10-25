@@ -1,0 +1,32 @@
+== d3llm-fp16-kvcache: n=100 flex=74.0 strict=0.0 mine_lastnum=74 (agree 100/100) stderr~0.0441
+   requests logged NFE=100 cumul-time lines=90 final: time=243.70s NFE=2318 tokens=20822 thr(calc)=85.44 tok/fwd=8.983 logged thr=85.44
+   sum NFE all=2613 sum NFE after warmup (10:)=2318 vs logged Total NFE 2318; s/q=2.708; ms/forward(after-warmup)=105.1; ms/fwd incl all NFE=93.3
+   per-request s: median=2.64 min=1.06 max=5.76; first-10 NFE mean=29.5 rest=25.8
+   GPU mem used print (avg over 2 GPUs, MB): min=12948 max=14076
+   resp chars median=724.5 empty/short(<20)=0 'nan' tokens=0; invalid-strict=99
+== d3llm-bf16-kvcache: n=100 flex=72.0 strict=0.0 mine_lastnum=72 (agree 100/100) stderr~0.0451
+   requests logged NFE=100 cumul-time lines=90 final: time=1285.48s NFE=2313 tokens=20987 thr(calc)=16.33 tok/fwd=9.073 logged thr=16.33
+   sum NFE all=2632 sum NFE after warmup (10:)=2313 vs logged Total NFE 2313; s/q=14.283; ms/forward(after-warmup)=555.8; ms/fwd incl all NFE=488.4
+   per-request s: median=13.33 min=5.58 max=32.94; first-10 NFE mean=31.9 rest=25.7
+   GPU mem used print (avg over 2 GPUs, MB): min=12929 max=14085
+   resp chars median=739.5 empty/short(<20)=0 'nan' tokens=0; invalid-strict=100
+== d3llm-fp16-multiblock: n=100 flex=73.0 strict=0.0 mine_lastnum=73 (agree 100/100) stderr~0.0446
+   requests logged NFE=100 cumul-time lines=90 final: time=271.32s NFE=2366 tokens=20874 thr(calc)=76.93 tok/fwd=8.822 logged thr=76.93
+   sum NFE all=2659 sum NFE after warmup (10:)=2366 vs logged Total NFE 2366; s/q=3.015; ms/forward(after-warmup)=114.7; ms/fwd incl all NFE=102.0
+   per-request s: median=2.78 min=1.22 max=7.34; first-10 NFE mean=29.3 rest=26.3
+   GPU mem used print (avg over 2 GPUs, MB): min=12716 max=13844
+   resp chars median=737.5 empty/short(<20)=0 'nan' tokens=0; invalid-strict=100
+fp16 vs bf16: identical text 25/100, identical extracted answer 72/100; both right 67, fp16 only 7, bf16 only 5; NFE equal 25
+fp16 kv vs nocache identical text 14 right: both 66
+== qwen-q4km: n=100 flex=49.0 strict=0.0 mine=49; server requests: prompt=100 eval=100 total=100
+   reqs 11-100: total_time=192.49s gen_tokens=20525 (228.1/q) prompt_tokens=6525; tok/s(total time)=106.63; tok/s(gen only)=111.03; s/q=2.139
+   reqs 1-100: total_time=214.60s gen_tokens=22875 (228.8/q) prompt_tokens=7315; tok/s(total time)=106.59; tok/s(gen only)=111.03; s/q=2.146
+   responses hitting max_gen_toks 256: 52; median gen=256.0; truncated flags=0
+   correct among cut: 9/52; among not cut: 40/48
+   resps containing 'answer is' or boxed: 0
+== qwen-q4km-512tok: n=100 flex=75.0 strict=0.0 mine=75; server requests: prompt=100 eval=100 total=100
+   reqs 11-100: total_time=223.40s gen_tokens=23910 (265.7/q) prompt_tokens=6525; tok/s(total time)=107.03; tok/s(gen only)=110.81; s/q=2.482
+   reqs 1-100: total_time=249.68s gen_tokens=26721 (267.2/q) prompt_tokens=7315; tok/s(total time)=107.02; tok/s(gen only)=110.82; s/q=2.497
+   responses hitting max_gen_toks 512: 2; median gen=259.0; truncated flags=0
+   correct among cut: 0/2; among not cut: 75/98
+   resps containing 'answer is' or boxed: 0

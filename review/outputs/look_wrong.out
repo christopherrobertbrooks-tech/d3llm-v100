@@ -1,0 +1,18 @@
+##### qwen-q4km-512tok
+--- doc 5 target 64 filtered=['16']
+...'lass at $5 and one glass at $3.\n   - The cost for one pair is \\(5 + 3 = 8\\) dollars.\n\n4. **Calculate the total cost for all pairs:**\n   - Since there are 8 pairs, the total cost is \\(8 \\times 8 = 64\\) dollars.\n\nTherefore, Kylar needs to pay $64 for 16 glasses.'
+--- doc 18 target 7 filtered=['4']
+...'the number of eggs into dozens:**\n   There are 12 eggs in a dozen. So, the number of dozens of eggs she eats in 4 weeks is:\n   \\[\n   \\frac{84 \\text{ eggs}}{12 \\text{ eggs/dozen}} = 7 \\text{ dozens}\n   \\]\n\nTherefore, Claire will eat 7 dozens of eggs in 4 weeks.'
+--- doc 19 target 6 filtered=['12']
+...'   - Required speed = Remaining distance / Remaining time = 6 miles / 1 hour = 6 miles per hour\n\nTherefore, Marissa needs to walk the remaining 6 miles at a speed of 6 miles per hour to achieve an average speed of 4 miles per hour for the entire 12-mile trail.'
+--- doc 23 target 8 filtered=['00']
+...'would be \\(2 \\text{ cm/hour} \\times 4 \\text{ hours} = 8 \\text{ cm}\\).\n\n3. **Conclusion:**\n   - After burning from 1:00 PM to 5:00 PM, the candle will be 8 centimeters shorter.\n\nSo, the candle will be 8 centimeters shorter after burning from 1:00 PM to 5:00 PM.'
+##### d3llm-fp16-kvcache
+--- doc 18 target 7 filtered=['4']
+...'eats \\(21 \\times 4 = 84\\) eggs.\n\n3. **Convert the number of eggs from dozens:**\n   - There are 12 eggs in a dozen.\n   - To find the number of dozens, we divide the total number of eggs by 12: \\(84 \\div 12 = 7\\).\n\nTherefore, Claire will eat 7 dozens in 4 weeks.'
+--- doc 23 target 8 filtered=['00']
+...'te the total shortening of the candle:**\n   - The candle melts by 2 centimeters every hour.\n   - Over 4 hours, the total shortening is:\n     \\[\n     8 \\text{ cm}\n     \\]\n\nTherefore, the candle will be 8 centimeters shorter after burning from 1:00 PM to 5:00 PM'
+--- doc 27 target 16 filtered=['60']
+...'Each carton costs $4.00.\n   - To find the total cost for 4 cartons, we multiply the number of cartons by the cost per carton:\n     \\[\n     4 \\times 4 = 16 \\text{ dollars}\n     \\]\n\nTherefore, Cynthia will spend \\(\\boxed{16}\\) dollars on ice cream after 60 days.'
+--- doc 36 target 75 filtered=['30']
+...'s by the number of yogurts per set: \\( 60 \\div 4 = 15 \\) sets.\n\n3. **Calculate the total cost:**\n   - Each set of 4 yogurts costs $5.00.\n   - Therefore, the total cost for 15 sets is \\( 15 \\times 5 = 75 \\) dollars.\n\nSo, Terry spends $75 on yogurt over 30 days.'

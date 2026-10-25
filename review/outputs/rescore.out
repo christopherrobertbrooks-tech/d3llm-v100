@@ -1,0 +1,7 @@
+d3llm-fp16-kvcache: lm_eval flexible=74  final-sentence/boxed rescoring=77  union(lm_eval or final)=80
+   d3LLM resp >=250 LLaDA tokens: 37; lm_eval-correct among them 23; have boxed 15; max tokens 256
+   hist of tokens: [243, 244, 245, 247, 247, 248, 248, 249, 251, 252, 252, 252, 254, 254, 254, 254, 254, 255, 255, 255, 255, 255, 255, 255, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256]
+d3llm-bf16-kvcache: lm_eval flexible=72  final-sentence/boxed rescoring=76  union(lm_eval or final)=78
+d3llm-fp16-multiblock: lm_eval flexible=73  final-sentence/boxed rescoring=78  union(lm_eval or final)=78
+qwen-q4km-512tok: lm_eval flexible=75  final-sentence/boxed rescoring=87  union(lm_eval or final)=87
+qwen-q4km: lm_eval flexible=49  final-sentence/boxed rescoring=48  union(lm_eval or final)=54

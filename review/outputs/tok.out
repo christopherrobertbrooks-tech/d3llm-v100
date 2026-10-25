@@ -1,0 +1,6 @@
+d3llm-fp16-kvcache LLaDA-tokenizer tokens/q mean(11-100)=231.4 mean(all)=230.5; >=250: 37; chars/q mean(11-100)=730.6 median=724
+  wrong: 26 with target number in last 150 chars (possible extraction artefact): 8
+  ends with [boxed]: 42  median chars 724.5
+qwen-q4km-512tok LLaDA-tokenizer tokens/q mean(11-100)=276.6 mean(all)=278.2; >=250: 58; chars/q mean(11-100)=857.8 median=811
+  wrong: 25 with target number in last 150 chars (possible extraction artefact): 16
+  ends with [boxed]: 0  median chars 811.5
