@@ -90,7 +90,7 @@ Notes on the measurements:
    - Tokens per forward are 8.98 against the paper's 9.11.
    - Every response is real text, with no NaN.
    - bf16 on the V100 is 5.2x slower (16.3 against 85.4 tok/s), because the card has no bf16 tensor cores. Use fp16.
-2. **llama.cpp Q4 beats it at equal budgets.**
+2. **At equal budgets llama.cpp Q4 is faster and smaller; accuracy is not clearly different.**
    - At 512 tokens each, Qwen is 1.9x faster per question (2.48 s against 4.74 s).
    - It uses about 4.5x less GPU memory (5.0 against 22.3 GiB).
    - Qwen scores higher on this sample, but not clearly significant at n=100: 91 against 84, paired 10 vs 3, sign
