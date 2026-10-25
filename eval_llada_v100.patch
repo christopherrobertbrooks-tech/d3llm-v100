@@ -1,0 +1,29 @@
+--- eval_llada.py	2026-10-25 14:18:41.367885885 -0500
++++ eval_llada_v100.py	2026-10-25 14:21:56.493187092 -0500
+@@ -142,6 +142,8 @@
+         model_kwargs = {}
+         if self.accelerator is not None:
+             model_kwargs.update({'device_map': {'': f'{self.accelerator.device}'}})
++        else:  # V100 run: load straight onto the GPU (the gateway has 16 GB of RAM)
++            model_kwargs.update({'device_map': {'': 'cuda:0'}, 'low_cpu_mem_usage': True})
+         config = AutoConfig.from_pretrained(model_path)
+         config.flash_attention = True
+         
+@@ -194,7 +196,7 @@
+             self.model = FastLLaDAModelLM.from_pretrained(
+                 model_path, 
+                 trust_remote_code=True, 
+-                torch_dtype=torch.bfloat16, 
++                torch_dtype=getattr(torch, os.environ.get("D3_DTYPE", "float16")),  # V100: no bf16 tensor cores 
+                 config=config, 
+                 **model_kwargs
+             )
+@@ -253,7 +255,7 @@
+             self.model = LLaDAModelLM.from_pretrained(
+                 model_path, 
+                 trust_remote_code=True, 
+-                torch_dtype=torch.bfloat16, 
++                torch_dtype=getattr(torch, os.environ.get("D3_DTYPE", "float16")),  # V100: no bf16 tensor cores 
+                 config=config, 
+                 **model_kwargs
+             )

@@ -1,0 +1,2498 @@
+2026-10-25:14:51:45 WARNING  [__main__:359]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2026-10-25:14:51:45 INFO     [__main__:422] Selected Tasks: ['gsm8k_cot_zeroshot']
+2026-10-25:14:51:45 INFO     [evaluator:180] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-10-25:14:51:45 INFO     [evaluator:218] Initializing llada_dist model, with arguments: {'model_path': '/mnt/nvme/models/d3llm/d3LLM_LLaDA', 'gen_length': 256, 'steps': 256, 'block_length': 32, 'show_speed': True, 'threshold': 0.5, 'task': 'gsm8k_cot_zeroshot', 'generation_method': 'generate_multi_block_kv_cache', 'early_stop': True, 'cache_delay_iter': 2, 'refresh_interval': 3}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+
+================================================================================
+DEBUG: Initializing dparallel model (generation_method=generate_multi_block_kv_cache)
+DEBUG: __file__ = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA/eval_llada_v100.py
+DEBUG: Path(__file__).resolve().parent = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA
+DEBUG: dparallel_llada_path = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA
+DEBUG: Removing existing dparallel path from sys.path
+DEBUG: Inserted dparallel path at sys.path[0]
+DEBUG: sys.path[:3] = ['/mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA', '/mnt/nvme/d3llm-sm70/d3LLM/utils/utils_Dream/eval_instruct', '/mnt/nvme/d3llm-sm70/d3LLM/d3llm/d3llm_LLaDA']
+DEBUG: Clearing cached modules: ['utils.utils_LLaDA.model.configuration_llada', 'utils.utils_LLaDA.model.modeling_llada']
+DEBUG: model directory exists? True
+DEBUG: modeling_llada.py exists? True
+DEBUG: Attempting to import from model.modeling_llada...
+DEBUG: Successfully imported LLaDAModelLM from model.modeling_llada
+================================================================================
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:06<00:18,  6.18s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:12<00:12,  6.37s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:19<00:06,  6.38s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  4.46s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.15s/it]
+2026-10-25:14:52:08 INFO     [evaluator:281] gsm8k_cot_zeroshot: Using gen_kwargs: {'until': ['Q:', '</s>', '<|im_end|>'], 'do_sample': False}
+2026-10-25:14:52:08 INFO     [evaluator:296] num_fewshot has been set to 0 for gsm8k_cot_zeroshot in its config. Manual configuration will be ignored.
+2026-10-25:14:52:08 INFO     [api.task:426] Building contexts for gsm8k_cot_zeroshot on rank 0...
+Using fixed batch_size: 1
+Using generation method: generate_multi_block_kv_cache
+  temperature: 0.0
+  block_add_threshold: 0.1
+  decoded_token_threshold: 0.95
+  early_stop: True
+  cache_delay_iter: 2
+  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 5161.59it/s]
+2026-10-25:14:52:08 INFO     [evaluator:542] Running generate_until requests
+Generating...:   0%|          | 0/100 [00:00<?, ?it/s]Generating...:   1%|          | 1/100 [00:04<06:37,  4.02s/it]Generating...:   2%|▏         | 2/100 [00:06<05:21,  3.28s/it]Generating...:   3%|▎         | 3/100 [00:09<05:06,  3.16s/it]Generating...:   4%|▍         | 4/100 [00:11<04:07,  2.58s/it]Generating...:   5%|▌         | 5/100 [00:14<04:18,  2.72s/it]Generating...:   6%|▌         | 6/100 [00:20<05:51,  3.73s/it]Generating...:   7%|▋         | 7/100 [00:22<04:51,  3.13s/it]Generating...:   8%|▊         | 8/100 [00:27<05:56,  3.88s/it]Generating...:   9%|▉         | 9/100 [00:30<05:28,  3.61s/it]Generating...:  10%|█         | 10/100 [00:33<04:55,  3.29s/it]Generating...:  11%|█         | 11/100 [00:35<04:15,  2.87s/it]Generating...:  12%|█▏        | 12/100 [00:37<03:48,  2.60s/it]Generating...:  13%|█▎        | 13/100 [00:41<04:25,  3.06s/it]====================
+question:  Q: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins f
+answer:  
+To determine how much money Janet makes every day at the farmers' market, we need to follow these s
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 1:
+  Number of GPUs: 2
+  GPU Memory Used: 12948.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.48%
+  GPU Utilization: 62.00%
+============================================================
+
+====================
+question:  Q: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does 
+answer:  
+To determine the total number of bolts required for the robe, we need to consider the amount of blu
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 2:
+  Number of GPUs: 2
+  GPU Memory Used: 12948.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.48%
+  GPU Utilization: 61.50%
+============================================================
+
+====================
+question:  Q: Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in re
+answer:  
+To determine Josh's profit, we need to follow these steps:
+
+1. **Calculate the total value of the h
+====================
+
+NFE (Number of Function Evaluations): 29
+
+============================================================
+GPU Stats at Step 3:
+  Number of GPUs: 2
+  GPU Memory Used: 12948.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.48%
+  GPU Utilization: 61.00%
+============================================================
+
+====================
+question:  Q: James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total me
+answer:  
+To determine the total number of meters James runs in a week, we need to break down the problem int
+====================
+
+NFE (Number of Function Evaluations): 16
+
+============================================================
+GPU Stats at Step 4:
+  Number of GPUs: 2
+  GPU Memory Used: 12948.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.48%
+  GPU Utilization: 61.50%
+============================================================
+
+====================
+question:  Q: Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, m
+answer:  
+To determine how many cups of feed Wendi needs to give her chickens in the final meal of the day, w
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 5:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 59.00%
+============================================================
+
+====================
+question:  Q: Kylar went to the store to buy glasses for his new apartment. One glass costs $5, but every secon
+answer:  
+1. One glass costs $5.
+2. Every second glass costs 60% of $5, which is 0.60 * $5 = $3.
+3. Kylar wan
+====================
+
+NFE (Number of Function Evaluations): 56
+
+============================================================
+GPU Stats at Step 6:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 62.00%
+============================================================
+
+====================
+question:  Q: Toulouse has twice as many sheep as Charleston. Charleston has 4 times as many sheep as Seattle. 
+answer:  
+
+1. **Determine the number of sheep Charleston has:**
+   - Seattle has 20 sheep.
+   - Charleston ha
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 7:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+====================
+question:  Q: Carla is downloading a 200 GB file. Normally she can download 2 GB/minute, but 40% of the way thr
+answer:  
+1. Carla is downloading a 200 GB file.
+2. Normally, she can download 2 GB/minute.
+3. 40% of the way
+====================
+
+NFE (Number of Function Evaluations): 55
+
+============================================================
+GPU Stats at Step 8:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.00%
+============================================================
+
+====================
+question:  Q: John drives for 3 hours at a speed of 60 mph and then turns around because he realizes he forgot 
+answer:  
+1. John drives for 3 hours at a speed of 60 mph.
+   - Distance = Speed × Time = 60 mph × 3 hours = 
+====================
+
+NFE (Number of Function Evaluations): 28
+
+============================================================
+GPU Stats at Step 9:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 59.00%
+============================================================
+
+====================
+question:  Q: Eliza's rate per hour for the first 40 hours she works each week is $10. She also receives an ove
+answer:  
+To determine Eliza's earnings for the week, we need to break down her earnings into regular hours a
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 10:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.00%
+============================================================
+
+====================
+question:  Q: A new program had 60 downloads in the first month. The number of downloads in the second month wa
+answer:  
+To determine the total number of downloads over the three months, we need to calculate the number o
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 11:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 1.902458667755127 seconds
+Total NFE is 18
+
+AFTER 'until' truncation:
+  Total tokens: 248
+  Throughput: 130.36 tokens/s
+  Tokens per forward: 13.78
+====================
+question:  Q: Toula went to the bakery and bought various types of pastries. She bought 3 dozen donuts which co
+answer:  
+To determine the total cost of the pastries Toula bought, we will calculate the cost of each type o
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 12:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 50.00%
+============================================================
+
+Total time taken (after warmup): 3.8462297916412354 seconds
+Total NFE is 36
+
+AFTER 'until' truncation:
+  Total tokens: 503
+  Throughput: 130.78 tokens/s
+  Tokens per forward: 13.97
+====================
+question:  Q: Carlos is planting a lemon tree. The tree will cost $90 to plant. Each year it will grow 7 lemons
+answer:  
+To determine how many years it will take before Carlos starts earning money on the lemon tree, we n
+====================
+
+NFE (Number of Function Evaluations): 40
+
+============================================================
+GPU Stats at Step 13:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 7.941169500350952 seconds
+Total NFE is 76
+
+AFTER 'until' truncation:
+  Total tokens: 758
+  Throughput: 95.45 tokens/s
+  Tokens per forward: 9.97
+====================Generating...:  14%|█▍        | 14/100 [00:45<04:46,  3.34s/it]Generating...:  15%|█▌        | 15/100 [00:48<04:57,  3.50s/it]Generating...:  16%|█▌        | 16/100 [00:53<05:27,  3.90s/it]Generating...:  17%|█▋        | 17/100 [00:56<05:00,  3.62s/it]Generating...:  18%|█▊        | 18/100 [00:59<04:35,  3.36s/it]Generating...:  19%|█▉        | 19/100 [01:02<04:15,  3.16s/it]Generating...:  20%|██        | 20/100 [01:06<04:48,  3.60s/it]Generating...:  21%|██        | 21/100 [01:10<04:43,  3.59s/it]Generating...:  22%|██▏       | 22/100 [01:12<04:01,  3.09s/it]Generating...:  23%|██▎       | 23/100 [01:14<03:41,  2.87s/it]
+question:  Q: Melanie is a door-to-door saleswoman. She sold a third of her vacuum cleaners at the green house,
+answer:  
+1. Let \( x \) be the number of vacuum cleaners Melanie started with.
+2. She sold a third of her va
+====================
+
+NFE (Number of Function Evaluations): 39
+
+============================================================
+GPU Stats at Step 14:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 11.897670984268188 seconds
+Total NFE is 115
+
+AFTER 'until' truncation:
+  Total tokens: 1013
+  Throughput: 85.14 tokens/s
+  Tokens per forward: 8.81
+====================
+question:  Q: In a dance class of 20 students, 20% enrolled in contemporary dance, 25% of the remaining enrolle
+answer:  
+1. **Calculate the number of students enrolled in contemporary dance:**
+   - 20% of 20 students = \
+====================
+
+NFE (Number of Function Evaluations): 38
+
+============================================================
+GPU Stats at Step 15:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 15.734580039978027 seconds
+Total NFE is 153
+
+AFTER 'until' truncation:
+  Total tokens: 1269
+  Throughput: 80.65 tokens/s
+  Tokens per forward: 8.29
+====================
+question:  Q: A merchant wants to make a choice of purchase between 2 purchase plans: jewelry worth $5,000 or e
+answer:  
+To determine the maximum profit, we need to calculate the future value of each purchase option afte
+====================
+
+NFE (Number of Function Evaluations): 48
+
+============================================================
+GPU Stats at Step 16:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 59.00%
+============================================================
+
+Total time taken (after warmup): 20.547804832458496 seconds
+Total NFE is 201
+
+AFTER 'until' truncation:
+  Total tokens: 1503
+  Throughput: 73.15 tokens/s
+  Tokens per forward: 7.48
+====================
+question:  Q: Two trains leave San Rafael at the same time. They begin traveling westward, both traveling for 8
+answer:  
+To determine the total distance covered by each train in the two days, we need to break down the pr
+====================
+
+NFE (Number of Function Evaluations): 28
+
+============================================================
+GPU Stats at Step 17:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 23.490909814834595 seconds
+Total NFE is 229
+
+AFTER 'until' truncation:
+  Total tokens: 1720
+  Throughput: 73.22 tokens/s
+  Tokens per forward: 7.51
+====================
+question:  Q: Jill gets paid $20 per hour to teach and $30 to be a cheerleading coach. If she works 50 weeks a 
+answer:  
+To determine Jill's annual salary, we need to calculate her earnings from both her teaching and coa
+====================
+
+NFE (Number of Function Evaluations): 26
+
+============================================================
+GPU Stats at Step 18:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 26.23877477645874 seconds
+Total NFE is 255
+
+AFTER 'until' truncation:
+  Total tokens: 1976
+  Throughput: 75.31 tokens/s
+  Tokens per forward: 7.75
+====================
+question:  Q: Claire makes a 3 egg omelet every morning for breakfast.  How many dozens of eggs will she eat in
+answer:  
+
+To determine how many dozens of eggs Claire will eat in 4 weeks, we need to follow these steps:
+
+1
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 19:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 58.00%
+============================================================
+
+Total time taken (after warmup): 28.880162477493286 seconds
+Total NFE is 282
+
+AFTER 'until' truncation:
+  Total tokens: 2195
+  Throughput: 76.00 tokens/s
+  Tokens per forward: 7.78
+====================
+question:  Q: Marissa is hiking a 12-mile trail. She took 1 hour to walk the first 4 miles, then another hour t
+answer:  
+Marissa has a total of 12 miles to hike. She has already walked 4 miles + 2 miles = 6 miles. Theref
+====================
+
+NFE (Number of Function Evaluations): 44
+
+============================================================
+GPU Stats at Step 20:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 57.50%
+============================================================
+
+Total time taken (after warmup): 33.4927077293396 seconds
+Total NFE is 326
+
+AFTER 'until' truncation:
+  Total tokens: 2319
+  Throughput: 69.24 tokens/s
+  Tokens per forward: 7.11
+====================
+question:  Q: I have 10 liters of orange drink that are two-thirds water and I wish to add it to 15 liters of p
+answer:  
+1. Calculate the amount of water in the orange drink:
+   - Orange drink: 10 liters
+   - Water conte
+====================
+
+NFE (Number of Function Evaluations): 34
+
+============================================================
+GPU Stats at Step 21:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 48.50%
+============================================================
+
+Total time taken (after warmup): 37.03722596168518 seconds
+Total NFE is 360
+
+AFTER 'until' truncation:
+  Total tokens: 2539
+  Throughput: 68.55 tokens/s
+  Tokens per forward: 7.05
+====================
+question:  Q: Raymond and Samantha are cousins. Raymond was born 6 years before Samantha. Raymond had a son at 
+answer:  
+
+1. **Determine Raymond's age:**
+   - Samantha is currently 31 years old.
+   - Raymond was born 6 y
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 22:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 57.00%
+============================================================
+
+Total time taken (after warmup): 38.937695026397705 seconds
+Total NFE is 378
+
+AFTER 'until' truncation:
+  Total tokens: 2732
+  Throughput: 70.16 tokens/s
+  Tokens per forward: 7.23
+====================
+question:  Q: Billy sells DVDs. He has 8 customers on Tuesday. His first 3 customers buy one DVD each.  His nex
+answer:  
+To determine the total number of DVDs Billy sold on Tuesday, we need to calculate the number of DVD
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 23:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 41.27638244628906 seconds
+Total NFE is 400
+
+AFTER 'until' truncation:
+  Total tokens: 2953
+  Throughput: 71.54 tokens/s
+  Tokens per forward: 7.38
+====================
+question:  Q: A candle melts by 2 centimeters every hour that it burns. How many centimeters shorter will a can
+answer:  
+
+To determine how many centimeters shorter a candle will be after burning from 1:00 PM to 5:00 PM, 
+====================
+
+NFE (Number of Function Evaluations): 39
+
+============================================================
+GPU Stats at Step 24:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+Generating...:  24%|██▍       | 24/100 [01:18<04:01,  3.18s/it]Generating...:  25%|██▌       | 25/100 [01:22<04:06,  3.29s/it]Generating...:  26%|██▌       | 26/100 [01:25<04:01,  3.26s/it]Generating...:  27%|██▋       | 27/100 [01:27<03:38,  2.99s/it]Generating...:  28%|██▊       | 28/100 [01:29<03:19,  2.77s/it]Generating...:  29%|██▉       | 29/100 [01:32<03:09,  2.67s/it]Generating...:  30%|███       | 30/100 [01:34<02:54,  2.49s/it]Generating...:  31%|███       | 31/100 [01:37<02:56,  2.56s/it]Generating...:  32%|███▏      | 32/100 [01:40<03:05,  2.73s/it]Generating...:  33%|███▎      | 33/100 [01:42<02:52,  2.57s/it]Generating...:  34%|███▍      | 34/100 [01:44<02:41,  2.45s/it]
+Total time taken (after warmup): 45.158602714538574 seconds
+Total NFE is 439
+
+AFTER 'until' truncation:
+  Total tokens: 3209
+  Throughput: 71.06 tokens/s
+  Tokens per forward: 7.31
+====================
+question:  Q: Kyle bought last year's best-selling book for $19.50. This is with a 25% discount from the origin
+answer:  
+To determine the original price of the book, we need to work backwards from the price Kyle paid, wh
+====================
+
+NFE (Number of Function Evaluations): 34
+
+============================================================
+GPU Stats at Step 25:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 48.67387938499451 seconds
+Total NFE is 473
+
+AFTER 'until' truncation:
+  Total tokens: 3452
+  Throughput: 70.92 tokens/s
+  Tokens per forward: 7.30
+====================
+question:  Q: Marie ordered one chicken meal that costs $12, 5 packs of milk that costs $3 each, 4 apples that 
+answer:  
+To determine how many boxes of pizza Marie ordered, we need to follow these steps:
+
+1. Calculate th
+====================
+
+NFE (Number of Function Evaluations): 30
+
+============================================================
+GPU Stats at Step 26:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 51.50%
+============================================================
+
+Total time taken (after warmup): 51.8516960144043 seconds
+Total NFE is 503
+
+AFTER 'until' truncation:
+  Total tokens: 3708
+  Throughput: 71.51 tokens/s
+  Tokens per forward: 7.37
+====================
+question:  Q: Mishka bought 3 pairs of shorts, 3 pairs of pants, and 3 pairs of shoes. One pair of shorts costs
+answer:  
+To determine the total amount Mishka spent on all the clothing items, we need to calculate the cost
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 27:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 57.50%
+============================================================
+
+Total time taken (after warmup): 54.1728720664978 seconds
+Total NFE is 525
+
+AFTER 'until' truncation:
+  Total tokens: 3964
+  Throughput: 73.17 tokens/s
+  Tokens per forward: 7.55
+====================
+question:  Q: Cynthia eats one serving of ice cream every night.  She buys cartons of ice cream with 15 serving
+answer:  
+To determine how much Cynthia will spend on ice cream after 60 days, we need to follow these steps:
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 28:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 58.00%
+============================================================
+
+Total time taken (after warmup): 56.41480469703674 seconds
+Total NFE is 546
+
+AFTER 'until' truncation:
+  Total tokens: 4218
+  Throughput: 74.77 tokens/s
+  Tokens per forward: 7.73
+====================
+question:  Q: Henry made two stops during his 60-mile bike trip. He first stopped after 20 miles. His second st
+answer:  
+To determine how many miles Henry traveled between his first and second stops, we need to follow th
+====================
+
+NFE (Number of Function Evaluations): 23
+
+============================================================
+GPU Stats at Step 29:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 56.50%
+============================================================
+
+Total time taken (after warmup): 58.82723259925842 seconds
+Total NFE is 569
+
+AFTER 'until' truncation:
+  Total tokens: 4453
+  Throughput: 75.70 tokens/s
+  Tokens per forward: 7.83
+====================
+question:  Q: Gloria is shoe shopping when she comes across a pair of boots that fit her shoe budget. However, 
+answer:  
+To determine the cost of the boots, we need to follow these steps:
+
+1. **Identify the cost of the t
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 30:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 60.879777908325195 seconds
+Total NFE is 588
+
+AFTER 'until' truncation:
+  Total tokens: 4668
+  Throughput: 76.68 tokens/s
+  Tokens per forward: 7.94
+====================
+question:  Q: Darrell and Allen's ages are in the ratio of 7:11. If their total age now is 162, calculate Allen
+answer:  
+To determine Allen's age 10 years from now, we need to follow these steps:
+
+1. **Find the total num
+====================
+
+NFE (Number of Function Evaluations): 26
+
+============================================================
+GPU Stats at Step 31:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 63.58146786689758 seconds
+Total NFE is 614
+
+AFTER 'until' truncation:
+  Total tokens: 4924
+  Throughput: 77.44 tokens/s
+  Tokens per forward: 8.02
+====================
+question:  Q: Gunter is trying to count the jelly beans in a jar. He asks his friends how many they think are i
+answer:  
+To find the average guess of Gunter's friends, we need to follow these steps:
+
+1. **Determine the g
+====================
+
+NFE (Number of Function Evaluations): 30
+
+============================================================
+GPU Stats at Step 32:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 48.00%
+============================================================
+
+Total time taken (after warmup): 66.67603588104248 seconds
+Total NFE is 644
+
+AFTER 'until' truncation:
+  Total tokens: 5178
+  Throughput: 77.66 tokens/s
+  Tokens per forward: 8.04
+====================
+question:  Q: John takes care of 10 dogs.  Each dog takes .5 hours a day to walk and take care of their busines
+answer:  
+To determine how many hours a week John spends taking care of his dogs, we need to follow these ste
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 33:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 68.8465223312378 seconds
+Total NFE is 665
+
+AFTER 'until' truncation:
+  Total tokens: 5434
+  Throughput: 78.93 tokens/s
+  Tokens per forward: 8.17
+====================
+question:  Q: Gretchen has 110 coins. There are 30 more gold coins than silver coins. How many gold coins does 
+answer:  
+To determine the number of gold coins Gretchen has, we need to follow these steps:
+
+1. Let \( S \) 
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 34:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 71.00623965263367 seconds
+Total NFE is 686
+
+AFTER 'until' truncation:
+  Total tokens: 5689
+  Throughput: 80.12 tokens/s
+  Tokens per forward: 8.29
+====================
+question:  Q: Siobhan has 2 fewer jewels than Aaron. Aaron has 5 more jewels than half of Raymond's jewels. If 
+answer:  
+To determine how many jewels Siobhan has, we need to follow the relationships given in the problem.
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================Generating...:  35%|███▌      | 35/100 [01:46<02:28,  2.28s/it]Generating...:  36%|███▌      | 36/100 [01:48<02:25,  2.27s/it]Generating...:  37%|███▋      | 37/100 [01:51<02:33,  2.43s/it]Generating...:  38%|███▊      | 38/100 [01:55<03:03,  2.95s/it]Generating...:  39%|███▉      | 39/100 [01:58<02:59,  2.95s/it]Generating...:  40%|████      | 40/100 [02:02<03:10,  3.18s/it]Generating...:  41%|████      | 41/100 [02:03<02:37,  2.68s/it]Generating...:  42%|████▏     | 42/100 [02:07<02:44,  2.84s/it]Generating...:  43%|████▎     | 43/100 [02:09<02:39,  2.80s/it]Generating...:  44%|████▍     | 44/100 [02:13<02:54,  3.11s/it]Generating...:  45%|████▌     | 45/100 [02:16<02:45,  3.00s/it]
+GPU Stats at Step 35:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 58.00%
+============================================================
+
+Total time taken (after warmup): 72.86712956428528 seconds
+Total NFE is 704
+
+AFTER 'until' truncation:
+  Total tokens: 5920
+  Throughput: 81.24 tokens/s
+  Tokens per forward: 8.41
+====================
+question:  Q: Mike plays ping pong for 40 minutes.  In the first 20 minutes, he scores 4 points.  In the second
+answer:  
+To determine the total points Mike scored, we need to break down his scoring into two segments: the
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 36:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 75.09894061088562 seconds
+Total NFE is 725
+
+AFTER 'until' truncation:
+  Total tokens: 6153
+  Throughput: 81.93 tokens/s
+  Tokens per forward: 8.49
+====================
+question:  Q: Terry eats 2 yogurts a day.  They are currently on sale at 4 yogurts for $5.00.  How much does he
+answer:  
+To determine how much Terry spends on yogurt over 30 days, we need to follow these steps:
+
+1. **Cal
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 37:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 59.50%
+============================================================
+
+Total time taken (after warmup): 77.86669182777405 seconds
+Total NFE is 752
+
+AFTER 'until' truncation:
+  Total tokens: 6394
+  Throughput: 82.11 tokens/s
+  Tokens per forward: 8.50
+====================
+question:  Q: John plans to sell all his toys and use the money to buy video games. He has 13 lego sets and he 
+answer:  
+
+1. John has 13 lego sets.
+2. He sells each lego set for $15.
+3. He buys 8 video games for $20 each
+====================
+
+NFE (Number of Function Evaluations): 40
+
+============================================================
+GPU Stats at Step 38:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 82.01888942718506 seconds
+Total NFE is 792
+
+AFTER 'until' truncation:
+  Total tokens: 6649
+  Throughput: 81.07 tokens/s
+  Tokens per forward: 8.40
+====================
+question:  Q: John runs 60 miles a week. He runs 3 days a week.  He runs 3 hours the first day and half as much
+answer:  
+To determine how fast John runs, we need to follow these steps:
+
+1. Calculate the total number of h
+====================
+
+NFE (Number of Function Evaluations): 28
+
+============================================================
+GPU Stats at Step 39:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 55.00%
+============================================================
+
+Total time taken (after warmup): 84.93468880653381 seconds
+Total NFE is 820
+
+AFTER 'until' truncation:
+  Total tokens: 6904
+  Throughput: 81.29 tokens/s
+  Tokens per forward: 8.42
+====================
+question:  Q: Dana can run at a rate of speed four times faster than she can walk, but she can skip at a rate o
+answer:  
+1. Dana can skip at a speed of 3 miles per hour.
+2. She can run at a speed of 3 * 2 = 6 miles per h
+====================
+
+NFE (Number of Function Evaluations): 35
+
+============================================================
+GPU Stats at Step 40:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 88.62288451194763 seconds
+Total NFE is 855
+
+AFTER 'until' truncation:
+  Total tokens: 7108
+  Throughput: 80.21 tokens/s
+  Tokens per forward: 8.31
+====================
+question:  Q: Brandon's iPhone is four times as old as Ben's iPhone. Ben's iPhone is two times older than Suzy'
+answer:  
+To determine the age of Brandon's iPhone, we need to follow the given relationships step by step.
+
+
+====================
+
+NFE (Number of Function Evaluations): 14
+
+============================================================
+GPU Stats at Step 41:
+  Number of GPUs: 2
+  GPU Memory Used: 13497.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.92%
+  GPU Utilization: 49.00%
+============================================================
+
+Total time taken (after warmup): 90.10461735725403 seconds
+Total NFE is 869
+
+AFTER 'until' truncation:
+  Total tokens: 7315
+  Throughput: 81.18 tokens/s
+  Tokens per forward: 8.42
+====================
+question:  Q: The great dragon, Perg, sat high atop mount Farbo, breathing fire upon anything within a distance
+answer:  
+
+1. **Determine the distance Polly can throw the javelin without holding the gemstone:**
+   Polly c
+====================
+
+NFE (Number of Function Evaluations): 26
+
+============================================================
+GPU Stats at Step 42:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 93.31458568572998 seconds
+Total NFE is 895
+
+AFTER 'until' truncation:
+  Total tokens: 7571
+  Throughput: 81.13 tokens/s
+  Tokens per forward: 8.46
+====================
+question:  Q: Grandma Jones baked 5 apple pies for the fireman's luncheon.  She cut each pie into 8 pieces and 
+answer:  
+To determine how many pieces of pie were taken by the guests, we need to follow these steps:
+
+1. Ca
+====================
+
+NFE (Number of Function Evaluations): 25
+
+============================================================
+GPU Stats at Step 43:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 95.97729110717773 seconds
+Total NFE is 920
+
+AFTER 'until' truncation:
+  Total tokens: 7814
+  Throughput: 81.42 tokens/s
+  Tokens per forward: 8.49
+====================
+question:  Q: According to its nutritional info, a bag of chips has 250 calories per serving. If a 300g bag has
+answer:  
+1. Your daily calorie target is 2000 calories.
+2. You have already consumed 1800 calories.
+3. There
+====================
+
+NFE (Number of Function Evaluations): 37
+
+============================================================
+GPU Stats at Step 44:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 49.00%
+============================================================
+
+Total time taken (after warmup): 99.79774308204651 seconds
+Total NFE is 957
+
+AFTER 'until' truncation:
+  Total tokens: 8016
+  Throughput: 80.32 tokens/s
+  Tokens per forward: 8.38
+====================
+question:  Q: Charlie wants to sell beeswax candles.  For every pound of beeswax, he can make 10 tapered candle
+answer:  
+To determine Charlie's net profit, we need to follow these steps:
+
+1. **Calculate the cost of suppl
+====================
+
+NFE (Number of Function Evaluations): 25
+
+============================================================
+GPU Stats at Step 45:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 102.52850031852722 seconds
+Total NFE is 982
+
+AFTER 'until' truncation:
+  Total tokens: 8218
+  Throughput: 80.15 tokens/s
+  Tokens per forward: 8.37
+====================
+question:  Q: Meredith is a freelance blogger who writes about health topics and submits to clients each day asGenerating...:  46%|████▌     | 46/100 [02:18<02:33,  2.85s/it]Generating...:  47%|████▋     | 47/100 [02:23<02:54,  3.30s/it]Generating...:  48%|████▊     | 48/100 [02:26<02:46,  3.20s/it]Generating...:  49%|████▉     | 49/100 [02:28<02:32,  2.99s/it]Generating...:  50%|█████     | 50/100 [02:30<02:04,  2.48s/it]Generating...:  51%|█████     | 51/100 [02:32<01:54,  2.33s/it]Generating...:  52%|█████▏    | 52/100 [02:35<02:05,  2.62s/it]Generating...:  53%|█████▎    | 53/100 [02:38<02:05,  2.68s/it]Generating...:  54%|█████▍    | 54/100 [02:41<02:11,  2.85s/it]Generating...:  55%|█████▌    | 55/100 [02:44<02:09,  2.88s/it]
+answer:  
+To determine the total number of hours Meredith spent writing articles over the three days, we need
+====================
+
+NFE (Number of Function Evaluations): 23
+
+============================================================
+GPU Stats at Step 46:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 104.98150110244751 seconds
+Total NFE is 1005
+
+AFTER 'until' truncation:
+  Total tokens: 8463
+  Throughput: 80.61 tokens/s
+  Tokens per forward: 8.42
+====================
+question:  Q: Candice put 80 post-it notes in her purse before she headed out to her job at the coffee shop.  O
+answer:  
+
+1. **Initial Post-it notes in the purse:**
+   Candice started with 80 Post-it notes in her purse.
+
+====================
+
+NFE (Number of Function Evaluations): 41
+
+============================================================
+GPU Stats at Step 47:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 109.31839203834534 seconds
+Total NFE is 1046
+
+AFTER 'until' truncation:
+  Total tokens: 8715
+  Throughput: 79.72 tokens/s
+  Tokens per forward: 8.33
+====================
+question:  Q: John buys twice as many red ties as blue ties.  The red ties cost 50% more than blue ties.  He sp
+answer:  
+
+1. John spent $200 on blue ties, and each blue tie costs $40.
+2. Therefore, he bought \( \frac{200
+====================
+
+NFE (Number of Function Evaluations): 28
+
+============================================================
+GPU Stats at Step 48:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 112.25312161445618 seconds
+Total NFE is 1074
+
+AFTER 'until' truncation:
+  Total tokens: 8928
+  Throughput: 79.53 tokens/s
+  Tokens per forward: 8.31
+====================
+question:  Q: Tracy used a piece of wire 4 feet long to support tomato plants in the garden. The wire was cut i
+answer:  
+To determine how many pieces of wire Tracy obtained, we need to follow these steps:
+
+1. Convert the
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 49:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 55.50%
+============================================================
+
+Total time taken (after warmup): 114.718590259552 seconds
+Total NFE is 1098
+
+AFTER 'until' truncation:
+  Total tokens: 9124
+  Throughput: 79.53 tokens/s
+  Tokens per forward: 8.31
+====================
+question:  Q: Richard lives in an apartment building with 15 floors. Each floor contains 8 units, and 3/4 of th
+answer:  
+To determine the total number of unoccupied units in the building, we need to follow these steps:
+
+
+====================
+
+NFE (Number of Function Evaluations): 12
+
+============================================================
+GPU Stats at Step 50:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 115.99395751953125 seconds
+Total NFE is 1110
+
+AFTER 'until' truncation:
+  Total tokens: 9331
+  Throughput: 80.44 tokens/s
+  Tokens per forward: 8.41
+====================
+question:  Q: Lloyd has an egg farm. His chickens produce 252 eggs per day and he sells them for $2 per dozen. 
+answer:  
+To determine how much Lloyd makes on eggs per week, we need to follow these steps:
+
+1. Calculate th
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 51:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 117.95619916915894 seconds
+Total NFE is 1129
+
+AFTER 'until' truncation:
+  Total tokens: 9587
+  Throughput: 81.28 tokens/s
+  Tokens per forward: 8.49
+====================
+question:  Q: Tom's ship can travel at 10 miles per hour.  He is sailing from 1 to 4 PM.  He then travels back 
+answer:  
+
+1. **Calculate the distance Tom travels forward:**
+   - Tom sails from 1 PM to 4 PM, which is 3 ho
+====================
+
+NFE (Number of Function Evaluations): 32
+
+============================================================
+GPU Stats at Step 52:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 121.22336292266846 seconds
+Total NFE is 1161
+
+AFTER 'until' truncation:
+  Total tokens: 9782
+  Throughput: 80.69 tokens/s
+  Tokens per forward: 8.43
+====================
+question:  Q: Uriah's book bag is getting too heavy for him. He needs to remove 15 pounds from it. His comic bo
+answer:  
+To determine how many toys Uriah needs to remove, we can follow these steps:
+
+1. Calculate the tota
+====================
+
+NFE (Number of Function Evaluations): 26
+
+============================================================
+GPU Stats at Step 53:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 124.00545239448547 seconds
+Total NFE is 1187
+
+AFTER 'until' truncation:
+  Total tokens: 10021
+  Throughput: 80.81 tokens/s
+  Tokens per forward: 8.44
+====================
+question:  Q: A mechanic charges different rates to repair the tires of trucks and cars.  For each truck tire t
+answer:  
+To determine how much more revenue the mechanic earned on the day with higher revenue, we need to c
+====================
+
+NFE (Number of Function Evaluations): 30
+
+============================================================
+GPU Stats at Step 54:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 127.25044655799866 seconds
+Total NFE is 1217
+
+AFTER 'until' truncation:
+  Total tokens: 10259
+  Throughput: 80.62 tokens/s
+  Tokens per forward: 8.43
+====================
+question:  Q: The Doubtfire sisters are driving home with 7 kittens adopted from the local animal shelter when 
+answer:  
+To determine the total number of kittens the Doubtfire family now has, we need to follow these step
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 55:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 130.15622401237488 seconds
+Total NFE is 1244
+
+AFTER 'until' truncation:
+  Total tokens: 10501
+  Throughput: 80.68 tokens/s
+  Tokens per forward: 8.44
+====================
+question:  Q: Jean has 30 lollipops. Jean eats 2 of the lollipops. With the remaining lollipops, Jean wants to 
+answer:  
+
+1. Jean starts with 30 lollipops.
+2. Jean eats 2 lollipops.
+3. So, Jean has \(30 - 2 = 28\) lollip
+====================
+
+NFE (Number of Function Evaluations): 16
+
+============================================================
+GPU Stats at Step 56:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 131.85413479804993 secondsGenerating...:  56%|█████▌    | 56/100 [02:46<01:51,  2.53s/it]Generating...:  57%|█████▋    | 57/100 [02:49<01:56,  2.71s/it]Generating...:  58%|█████▊    | 58/100 [02:52<01:56,  2.78s/it]Generating...:  59%|█████▉    | 59/100 [02:54<01:53,  2.76s/it]Generating...:  60%|██████    | 60/100 [02:56<01:41,  2.54s/it]Generating...:  61%|██████    | 61/100 [03:00<01:46,  2.72s/it]Generating...:  62%|██████▏   | 62/100 [03:02<01:44,  2.74s/it]Generating...:  63%|██████▎   | 63/100 [03:08<02:15,  3.65s/it]Generating...:  64%|██████▍   | 64/100 [03:13<02:20,  3.92s/it]Generating...:  65%|██████▌   | 65/100 [03:17<02:23,  4.09s/it]Generating...:  66%|██████▌   | 66/100 [03:19<02:00,  3.53s/it]
+Total NFE is 1260
+
+AFTER 'until' truncation:
+  Total tokens: 10630
+  Throughput: 80.62 tokens/s
+  Tokens per forward: 8.44
+====================
+question:  Q: Peter plans to go to the movies this week. He always gets a ticket for $7 and popcorn for $7. If 
+answer:  
+To determine how many times Peter can go to the movies, we need to follow these steps:
+
+1. Calculat
+====================
+
+NFE (Number of Function Evaluations): 31
+
+============================================================
+GPU Stats at Step 57:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 134.96719098091125 seconds
+Total NFE is 1291
+
+AFTER 'until' truncation:
+  Total tokens: 10856
+  Throughput: 80.43 tokens/s
+  Tokens per forward: 8.41
+====================
+question:  Q: A wooden bridge can carry no more than 5000 pounds. A delivery truck filled with identical boxes,
+answer:  
+To determine the maximum number of boxes that can be loaded onto the truck without exceeding the br
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 58:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 137.8765914440155 seconds
+Total NFE is 1318
+
+AFTER 'until' truncation:
+  Total tokens: 11112
+  Throughput: 80.59 tokens/s
+  Tokens per forward: 8.43
+====================
+question:  Q: Stephen placed an online order for groceries.  His final bill came to $40.00.  Because this was t
+answer:  
+To determine the final price of Stephen's groceries after the extra fees, we need to follow these s
+====================
+
+NFE (Number of Function Evaluations): 25
+
+============================================================
+GPU Stats at Step 59:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 140.5786430835724 seconds
+Total NFE is 1343
+
+AFTER 'until' truncation:
+  Total tokens: 11361
+  Throughput: 80.82 tokens/s
+  Tokens per forward: 8.46
+====================
+question:  Q: A raspberry bush has 6 clusters of 20 fruit each and 67 individual fruit scattered across the bus
+answer:  
+To determine the total number of raspberries on the raspberry bush, we need to add the number of ra
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 60:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 142.55812311172485 seconds
+Total NFE is 1362
+
+AFTER 'until' truncation:
+  Total tokens: 11576
+  Throughput: 81.20 tokens/s
+  Tokens per forward: 8.50
+====================
+question:  Q: A basket contains 25 oranges among which 1 is bad, 20% are unripe, 2 are sour and the rest are go
+answer:  
+To determine the number of good oranges in the basket, we need to follow these steps:
+
+1. **Calcula
+====================
+
+NFE (Number of Function Evaluations): 31
+
+============================================================
+GPU Stats at Step 61:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 56.50%
+============================================================
+
+Total time taken (after warmup): 145.6877887248993 seconds
+Total NFE is 1393
+
+AFTER 'until' truncation:
+  Total tokens: 11832
+  Throughput: 81.21 tokens/s
+  Tokens per forward: 8.49
+====================
+question:  Q: Janet buys a brooch for her daughter.  She pays $500 for the material to make it and then another
+answer:  
+To determine the total amount Janet paid for the brooch, we need to break down the costs and sum th
+====================
+
+NFE (Number of Function Evaluations): 26
+
+============================================================
+GPU Stats at Step 62:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 148.4485535621643 seconds
+Total NFE is 1419
+
+AFTER 'until' truncation:
+  Total tokens: 12088
+  Throughput: 81.43 tokens/s
+  Tokens per forward: 8.52
+====================
+question:  Q: If Marcy works for the same company for 40 years, she gets an annual pension of $50,000/year. Sta
+answer:  
+To determine Marcy's annual pension if she quits after 30 years, we need to consider the different 
+====================
+
+NFE (Number of Function Evaluations): 57
+
+============================================================
+GPU Stats at Step 63:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 154.20454692840576 seconds
+Total NFE is 1476
+
+AFTER 'until' truncation:
+  Total tokens: 12339
+  Throughput: 80.02 tokens/s
+  Tokens per forward: 8.36
+====================
+question:  Q: Aleena subscribed to a streaming service that charges her $140 per month. If the streaming compan
+answer:  
+1. The streaming service charges $140 per month.
+2. For the first half of the year, which is 6 mont
+====================
+
+NFE (Number of Function Evaluations): 44
+
+============================================================
+GPU Stats at Step 64:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 158.70936608314514 seconds
+Total NFE is 1520
+
+AFTER 'until' truncation:
+  Total tokens: 12541
+  Throughput: 79.02 tokens/s
+  Tokens per forward: 8.25
+====================
+question:  Q: Sophia is thinking of taking a road trip in her car, and would like to know how far she can drive
+answer:  
+To determine how many miles Sophia can drive on a single tank of gas, we need to follow these steps
+====================
+
+NFE (Number of Function Evaluations): 42
+
+============================================================
+GPU Stats at Step 65:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 163.18088340759277 seconds
+Total NFE is 1562
+
+AFTER 'until' truncation:
+  Total tokens: 12796
+  Throughput: 78.42 tokens/s
+  Tokens per forward: 8.19
+====================
+question:  Q: Jim spends 2 hours watching TV and then decides to go to bed and reads for half as long.  He does
+answer:  
+
+1. **Determine the total time spent on TV and reading per day:**
+   - Jim spends 2 hours watching 
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 66:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 165.3790581226349 seconds
+Total NFE is 1583
+
+AFTER 'until' truncation:
+  Total tokens: 13034
+  Throughput: 78.81 tokens/s
+  Tokens per forward: 8.23
+====================
+question:  Q: There are four schools competing at a basketball tournament. Each school has sent a girls’ basket
+answer:  
+
+1. **Determine the number of players per school:**
+   - Each school has a girls' basketball team a
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================Generating...:  67%|██████▋   | 67/100 [03:22<01:47,  3.25s/it]Generating...:  68%|██████▊   | 68/100 [03:24<01:28,  2.76s/it]Generating...:  69%|██████▉   | 69/100 [03:25<01:13,  2.36s/it]Generating...:  70%|███████   | 70/100 [03:28<01:15,  2.50s/it]Generating...:  71%|███████   | 71/100 [03:30<01:13,  2.52s/it]Generating...:  72%|███████▏  | 72/100 [03:31<00:58,  2.09s/it]Generating...:  73%|███████▎  | 73/100 [03:33<00:55,  2.06s/it]Generating...:  74%|███████▍  | 74/100 [03:36<00:54,  2.11s/it]Generating...:  75%|███████▌  | 75/100 [03:39<00:58,  2.34s/it]Generating...:  76%|███████▌  | 76/100 [03:41<00:56,  2.36s/it]Generating...:  77%|███████▋  | 77/100 [03:44<01:01,  2.65s/it]
+GPU Stats at Step 67:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 48.50%
+============================================================
+
+Total time taken (after warmup): 167.9635829925537 seconds
+Total NFE is 1607
+
+AFTER 'until' truncation:
+  Total tokens: 13281
+  Throughput: 79.07 tokens/s
+  Tokens per forward: 8.26
+====================
+question:  Q: A treasure hunter found a buried treasure chest filled with gems. There were 175 diamonds, 35 few
+answer:  
+To determine the total number of gems in the chest, we need to calculate the number of each type of
+====================
+
+NFE (Number of Function Evaluations): 15
+
+============================================================
+GPU Stats at Step 68:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 169.555034160614 seconds
+Total NFE is 1622
+
+AFTER 'until' truncation:
+  Total tokens: 13519
+  Throughput: 79.73 tokens/s
+  Tokens per forward: 8.33
+====================
+question:  Q: There are twice as many boys as girls at Dr. Wertz's school. If there are 60 girls and 5 students
+answer:  
+To determine the number of teachers at Dr. Wertz's school, we need to follow these steps:
+
+1. **Cal
+====================
+
+NFE (Number of Function Evaluations): 13
+
+============================================================
+GPU Stats at Step 69:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 59.50%
+============================================================
+
+Total time taken (after warmup): 170.9368827342987 seconds
+Total NFE is 1635
+
+AFTER 'until' truncation:
+  Total tokens: 13756
+  Throughput: 80.47 tokens/s
+  Tokens per forward: 8.41
+====================
+question:  Q: Bailey starts with a certain amount of money. Then she receives a weekly allowance of $5 for 8 we
+answer:  
+To determine how much money Bailey started with, we need to follow these steps:
+
+1. Calculate the t
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 70:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 173.76553869247437 seconds
+Total NFE is 1662
+
+AFTER 'until' truncation:
+  Total tokens: 13992
+  Throughput: 80.52 tokens/s
+  Tokens per forward: 8.42
+====================
+question:  Q: Judy teaches 5 dance classes, every day, on the weekdays and 8 classes on Saturday.  If each clas
+answer:  
+
+1. Calculate the total number of classes Judy teaches in a week:
+   - She teaches 5 classes every 
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 71:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 176.2945499420166 seconds
+Total NFE is 1686
+
+AFTER 'until' truncation:
+  Total tokens: 14218
+  Throughput: 80.65 tokens/s
+  Tokens per forward: 8.43
+====================
+question:  Q: Kelian has two recipes for preparing dishes, one having 20 instructions and the second one having
+answer:  
+1. The first recipe has 20 instructions.
+2. The second recipe has twice as many instructions as the
+====================
+
+NFE (Number of Function Evaluations): 10
+
+============================================================
+GPU Stats at Step 72:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 177.35245776176453 seconds
+Total NFE is 1696
+
+AFTER 'until' truncation:
+  Total tokens: 14318
+  Throughput: 80.73 tokens/s
+  Tokens per forward: 8.44
+====================
+question:  Q: Tommy is fundraising for his charity by selling brownies for $3 a slice and cheesecakes for $4 a 
+answer:  
+To determine how much money Tommy raises, we need to calculate the revenue from selling brownies an
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 73:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 179.3307237625122 seconds
+Total NFE is 1715
+
+AFTER 'until' truncation:
+  Total tokens: 14555
+  Throughput: 81.16 tokens/s
+  Tokens per forward: 8.49
+====================
+question:  Q: Shiela bought five cell phones for $150 each for a 3-month installment. A 2% interest will be cha
+answer:  
+To determine how much Shiela will pay each month for 3 months, we need to follow these steps:
+
+1. *
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 74:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 181.54394936561584 seconds
+Total NFE is 1736
+
+AFTER 'until' truncation:
+  Total tokens: 14796
+  Throughput: 81.50 tokens/s
+  Tokens per forward: 8.52
+====================
+question:  Q: Artie has a flower stand at the Farmers Market. He sells three kinds of flowers: marigolds, petun
+answer:  
+To determine how much Artie will make, we need to calculate the total revenue from each type of flo
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 75:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 184.37840008735657 seconds
+Total NFE is 1758
+
+AFTER 'until' truncation:
+  Total tokens: 15052
+  Throughput: 81.64 tokens/s
+  Tokens per forward: 8.56
+====================
+question:  Q: Luke is spending time at the beach building sandcastles. He eventually notices that each level of
+answer:  
+To determine the average square footage of a level in a 4-level sandcastle, we need to follow these
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 76:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 186.7537806034088 seconds
+Total NFE is 1780
+
+AFTER 'until' truncation:
+  Total tokens: 15282
+  Throughput: 81.83 tokens/s
+  Tokens per forward: 8.59
+====================
+question:  Q: Cecilia just bought a new puppy. According to her veterinarian, she has to feed the puppy 1 cup o
+answer:  
+1. For the first 180 days, the puppy eats 1 cup of dog food every day.
+2. For the rest of the year,
+====================
+
+NFE (Number of Function Evaluations): 31
+
+============================================================
+GPU Stats at Step 77:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 190.07808566093445 seconds
+Total NFE is 1811
+
+AFTER 'until' truncation:
+  Total tokens: 15536
+  Throughput: 81.73 tokens/s
+  Tokens per forward: 8.58
+====================
+question:  Q: If Raymond does half as much laundry as Sarah, and Sarah does 4 times as much laundry as David, cGenerating...:  78%|███████▊  | 78/100 [03:46<00:50,  2.28s/it]Generating...:  79%|███████▉  | 79/100 [03:48<00:48,  2.29s/it]Generating...:  80%|████████  | 80/100 [03:50<00:46,  2.33s/it]Generating...:  81%|████████  | 81/100 [03:53<00:45,  2.39s/it]Generating...:  82%|████████▏ | 82/100 [03:54<00:37,  2.07s/it]Generating...:  83%|████████▎ | 83/100 [03:57<00:35,  2.11s/it]Generating...:  84%|████████▍ | 84/100 [03:59<00:33,  2.08s/it]Generating...:  85%|████████▌ | 85/100 [04:01<00:33,  2.22s/it]Generating...:  86%|████████▌ | 86/100 [04:03<00:29,  2.12s/it]Generating...:  87%|████████▋ | 87/100 [04:06<00:29,  2.28s/it]
+answer:  
+To determine the difference in the amount of laundry Raymond and David do, we need to follow these 
+====================
+
+NFE (Number of Function Evaluations): 13
+
+============================================================
+GPU Stats at Step 78:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 191.4479055404663 seconds
+Total NFE is 1824
+
+AFTER 'until' truncation:
+  Total tokens: 15767
+  Throughput: 82.36 tokens/s
+  Tokens per forward: 8.64
+====================
+question:  Q: Vincent can buy flowers in packages of 3 for $2.50 or in packages of 2 for $1. How much money doe
+answer:  
+To determine how much money Vincent saves by buying 18 flowers at the better price, we need to calc
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 79:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 193.74148297309875 seconds
+Total NFE is 1846
+
+AFTER 'until' truncation:
+  Total tokens: 16019
+  Throughput: 82.68 tokens/s
+  Tokens per forward: 8.68
+====================
+question:  Q: John adopts a dog.  He takes the dog to the groomer, which costs $100.  The groomer offers him a 
+answer:  
+To determine the final cost of the grooming after the discount, we need to follow these steps:
+
+1. 
+====================
+
+NFE (Number of Function Evaluations): 23
+
+============================================================
+GPU Stats at Step 80:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 47.00%
+============================================================
+
+Total time taken (after warmup): 196.1541566848755 seconds
+Total NFE is 1869
+
+AFTER 'until' truncation:
+  Total tokens: 16229
+  Throughput: 82.74 tokens/s
+  Tokens per forward: 8.68
+====================
+question:  Q: Two girls each got 1/6 of the 24 liters of water. Then a boy got 6 liters of water. How many lite
+answer:  
+
+1. **Determine the amount of water each girl received:**
+   Each girl received \( \frac{1}{6} \) o
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 81:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 57.00%
+============================================================
+
+Total time taken (after warmup): 198.64404916763306 seconds
+Total NFE is 1893
+
+AFTER 'until' truncation:
+  Total tokens: 16483
+  Throughput: 82.98 tokens/s
+  Tokens per forward: 8.71
+====================
+question:  Q: Charlie had 10 stickers. He bought 21 stickers from a store in the mall and got 23 stickers for h
+answer:  
+
+1. Charlie started with 10 stickers.
+2. He bought 21 stickers from the store:
+   \[
+   10 + 21 = 3
+====================
+
+NFE (Number of Function Evaluations): 12
+
+============================================================
+GPU Stats at Step 82:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 199.95561051368713 seconds
+Total NFE is 1905
+
+AFTER 'until' truncation:
+  Total tokens: 16643
+  Throughput: 83.23 tokens/s
+  Tokens per forward: 8.74
+====================
+question:  Q: Grace weighs 125 pounds. Alex weighs 2 pounds less than 4 times what Grace weighs. What are their
+answer:  
+To determine the combined weights of Grace and Alex, we need to follow these steps:
+
+1. Identify Gr
+====================
+
+NFE (Number of Function Evaluations): 21
+
+============================================================
+GPU Stats at Step 83:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 202.1416416168213 seconds
+Total NFE is 1926
+
+AFTER 'until' truncation:
+  Total tokens: 16895
+  Throughput: 83.58 tokens/s
+  Tokens per forward: 8.77
+====================
+question:  Q: Dan plants 3 rose bushes. Each rose bush has 25 roses. Each rose has 8 thorns. How many thorns ar
+answer:  
+To determine the total number of thorns, we need to follow these steps:
+
+1. Calculate the total num
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 84:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 204.1077070236206 seconds
+Total NFE is 1945
+
+AFTER 'until' truncation:
+  Total tokens: 17113
+  Throughput: 83.84 tokens/s
+  Tokens per forward: 8.80
+====================
+question:  Q: A football team played 22 games. They won 8 more than they lost. How many did they win?
+A: Let's 
+answer:  
+To determine how many games the football team won, we can follow these steps:
+
+1. Let \( L \) repre
+====================
+
+NFE (Number of Function Evaluations): 25
+
+============================================================
+GPU Stats at Step 85:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 56.00%
+============================================================
+
+Total time taken (after warmup): 206.6327188014984 seconds
+Total NFE is 1970
+
+AFTER 'until' truncation:
+  Total tokens: 17369
+  Throughput: 84.06 tokens/s
+  Tokens per forward: 8.82
+====================
+question:  Q: Gene is sewing a quilt out of old souvenir t-shirts. He has one shirt from each vacation he has b
+answer:  
+To determine the total number of quilt blocks Gene has, we need to follow these steps:
+
+1. **Calcul
+====================
+
+NFE (Number of Function Evaluations): 17
+
+============================================================
+GPU Stats at Step 86:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 208.498304605484 seconds
+Total NFE is 1987
+
+AFTER 'until' truncation:
+  Total tokens: 17572
+  Throughput: 84.28 tokens/s
+  Tokens per forward: 8.84
+====================
+question:  Q: Greg has an alarm set to ring three times a day as a reminder. When the alarm goes off, it contin
+answer:  
+To determine the total number of times the alarm rang, we need to break down the problem into its c
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 87:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 211.14489793777466 seconds
+Total NFE is 2011
+
+AFTER 'until' truncation:
+  Total tokens: 17764
+  Throughput: 84.13 tokens/s
+  Tokens per forward: 8.83
+====================
+question:  Q: A company pays each of its employees $600 in a month. The company has a policy of increasing the 
+answer:  
+To determine Sylvie's annual salary after three more years of service, we need to follow these step
+====================
+
+NFE (Number of Function Evaluations): 29
+
+============================================================
+GPU Stats at Step 88:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 59.50%
+============================================================
+
+Total time taken (after warmup): 214.30151653289795 secondsGenerating...:  88%|████████▊ | 88/100 [04:09<00:30,  2.55s/it]Generating...:  89%|████████▉ | 89/100 [04:11<00:27,  2.51s/it]Generating...:  90%|█████████ | 90/100 [04:13<00:23,  2.37s/it]Generating...:  91%|█████████ | 91/100 [04:16<00:22,  2.47s/it]Generating...:  92%|█████████▏| 92/100 [04:17<00:16,  2.11s/it]Generating...:  93%|█████████▎| 93/100 [04:19<00:13,  1.93s/it]Generating...:  94%|█████████▍| 94/100 [04:21<00:12,  2.08s/it]Generating...:  95%|█████████▌| 95/100 [04:23<00:09,  1.94s/it]Generating...:  96%|█████████▌| 96/100 [04:25<00:07,  1.90s/it]Generating...:  97%|█████████▋| 97/100 [04:27<00:06,  2.17s/it]Generating...:  98%|█████████▊| 98/100 [04:31<00:05,  2.73s/it]
+Total NFE is 2040
+
+AFTER 'until' truncation:
+  Total tokens: 18020
+  Throughput: 84.09 tokens/s
+  Tokens per forward: 8.83
+====================
+question:  Q: Marilyn's first record sold 10 times as many copies as Harald's. If they sold 88,000 copies combi
+answer:  
+To determine how many copies Harald sold, we can follow these steps:
+
+1. Let \( H \) represent the 
+====================
+
+NFE (Number of Function Evaluations): 23
+
+============================================================
+GPU Stats at Step 89:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 216.68615102767944 seconds
+Total NFE is 2063
+
+AFTER 'until' truncation:
+  Total tokens: 18268
+  Throughput: 84.31 tokens/s
+  Tokens per forward: 8.86
+====================
+question:  Q: Christina is planning a birthday party and needs .75 gift bags per invited guest, because 1/4 of 
+answer:  
+
+1. **Determine the number of guests who will show up:**
+   - Christina invited 16 friends.
+   - 1/
+====================
+
+NFE (Number of Function Evaluations): 19
+
+============================================================
+GPU Stats at Step 90:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 218.69514846801758 seconds
+Total NFE is 2082
+
+AFTER 'until' truncation:
+  Total tokens: 18477
+  Throughput: 84.49 tokens/s
+  Tokens per forward: 8.87
+====================
+question:  Q: Ted the T-Rex was planning to bring potato salad to the dinosaur picnic.  He knows that an adult 
+answer:  
+To determine how many pounds of potato salad Ted needs to bring to the picnic, we need to calculate
+====================
+
+NFE (Number of Function Evaluations): 25
+
+============================================================
+GPU Stats at Step 91:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 58.50%
+============================================================
+
+Total time taken (after warmup): 221.38307690620422 seconds
+Total NFE is 2107
+
+AFTER 'until' truncation:
+  Total tokens: 18733
+  Throughput: 84.62 tokens/s
+  Tokens per forward: 8.89
+====================
+question:  Q: Jan has three times the number of pets as Marcia. Marcia has two more pets than Cindy. If Cindy h
+answer:  
+To determine the total number of pets that Jan, Marcia, and Cindy have, we will follow these steps:
+====================
+
+NFE (Number of Function Evaluations): 12
+
+============================================================
+GPU Stats at Step 92:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 222.63705849647522 seconds
+Total NFE is 2119
+
+AFTER 'until' truncation:
+  Total tokens: 18961
+  Throughput: 85.17 tokens/s
+  Tokens per forward: 8.95
+====================
+question:  Q: Emily has 4 kids named Amy, Jackson, Corey, and James. Amy is 5 years older than Jackson and 2 ye
+answer:  
+To determine Jackson's age, we need to follow the given relationships step by step.
+
+1. **James's A
+====================
+
+NFE (Number of Function Evaluations): 14
+
+============================================================
+GPU Stats at Step 93:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 224.12348198890686 seconds
+Total NFE is 2133
+
+AFTER 'until' truncation:
+  Total tokens: 19131
+  Throughput: 85.36 tokens/s
+  Tokens per forward: 8.97
+====================
+question:  Q: Lee used to be able to run the 400-meter hurdles two seconds faster than Gerald would run the 400
+answer:  
+
+1. **Determine Gerald's original time:**
+   - Lee runs the 400-meter hurdles in 38 seconds.
+   - L
+====================
+
+NFE (Number of Function Evaluations): 22
+
+============================================================
+GPU Stats at Step 94:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.50%
+============================================================
+
+Total time taken (after warmup): 226.5226788520813 seconds
+Total NFE is 2155
+
+AFTER 'until' truncation:
+  Total tokens: 19340
+  Throughput: 85.38 tokens/s
+  Tokens per forward: 8.97
+====================
+question:  Q: In a neighborhood, the number of rabbits pets is twelve less than the combined number of pet dogs
+answer:  
+To determine the total number of pets in the neighborhood, we need to follow these steps:
+
+1. **Det
+====================
+
+NFE (Number of Function Evaluations): 15
+
+============================================================
+GPU Stats at Step 95:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 228.1103401184082 seconds
+Total NFE is 2170
+
+AFTER 'until' truncation:
+  Total tokens: 19596
+  Throughput: 85.91 tokens/s
+  Tokens per forward: 9.03
+====================
+question:  Q: Out of the 200 Grade 5 students, 2/5 are boys and 2/3 of the girls are in the girl scout. How man
+answer:  
+To determine how many girls are not in the girl scout, we need to follow these steps:
+
+1. **Calcula
+====================
+
+NFE (Number of Function Evaluations): 17
+
+============================================================
+GPU Stats at Step 96:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 60.00%
+============================================================
+
+Total time taken (after warmup): 229.90483474731445 seconds
+Total NFE is 2187
+
+AFTER 'until' truncation:
+  Total tokens: 19850
+  Throughput: 86.34 tokens/s
+  Tokens per forward: 9.08
+====================
+question:  Q: Harry slept 9 hours last night. His friend James slept only 2/3 of what Harry slept. How many mor
+answer:  
+To find out how many more hours Harry slept than James, we need to follow these steps:
+
+1. Determin
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 97:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.50%
+============================================================
+
+Total time taken (after warmup): 232.68340015411377 seconds
+Total NFE is 2214
+
+AFTER 'until' truncation:
+  Total tokens: 20091
+  Throughput: 86.34 tokens/s
+  Tokens per forward: 9.07
+====================
+question:  Q: When Freda cooks canned tomatoes into sauce, they lose half their volume. Each 16 ounce can of to
+answer:  
+To determine the number of tomatoes Freda used, we need to follow these steps:
+
+1. **Determine the 
+====================
+
+NFE (Number of Function Evaluations): 38
+
+============================================================
+GPU Stats at Step 98:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 236.68477058410645 seconds
+Total NFE is 2252
+
+AFTER 'until' truncation:
+  Total tokens: 20347
+  Throughput: 85.97 tokens/s
+  Tokens per forward: 9.04
+====================
+question:  Q: Cars have lined up on the motorway. Some of the cars drive through in the first 15 minutes of the
+answer:  
+
+1. **Initial number of cars**: There were originally 30 cars on the motorway.
+2. **Cars that took 
+====================
+
+NFE (Number of Function Evaluations): 36
+
+============================================================Generating...:  99%|█████████▉| 99/100 [04:35<00:03,  3.09s/it]Generating...: 100%|██████████| 100/100 [04:39<00:00,  3.10s/it]Generating...: 100%|██████████| 100/100 [04:39<00:00,  2.79s/it]
+2026-10-25:14:56:47 INFO     [loggers.evaluation_tracker:209] Saving results aggregated
+2026-10-25:14:56:47 INFO     [loggers.evaluation_tracker:290] Saving per-sample results for: gsm8k_cot_zeroshot
+
+GPU Stats at Step 99:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 62.00%
+============================================================
+
+Total time taken (after warmup): 240.58941674232483 seconds
+Total NFE is 2288
+
+AFTER 'until' truncation:
+  Total tokens: 20566
+  Throughput: 85.48 tokens/s
+  Tokens per forward: 8.99
+====================
+question:  Q: Mary is an avid gardener. Yesterday, she received 18 new potted plants from her favorite plant nu
+answer:  
+To determine how many potted plants Mary will remain with, we need to follow these steps:
+
+1. Calcu
+====================
+
+NFE (Number of Function Evaluations): 30
+
+============================================================
+GPU Stats at Step 100:
+  Number of GPUs: 2
+  GPU Memory Used: 14076.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 62.49%
+  GPU Utilization: 61.00%
+============================================================
+
+Total time taken (after warmup): 243.69554138183594 seconds
+Total NFE is 2318
+
+AFTER 'until' truncation:
+  Total tokens: 20822
+  Throughput: 85.44 tokens/s
+  Tokens per forward: 8.98
+llada_dist (model_path=/mnt/nvme/models/d3llm/d3LLM_LLaDA,gen_length=256,steps=256,block_length=32,show_speed=True,threshold=0.5,task=gsm8k_cot_zeroshot,generation_method=generate_multi_block_kv_cache,early_stop=True,cache_delay_iter=2,refresh_interval=3), gen_kwargs: (None), limit: 100.0, num_fewshot: 0, batch_size: 1
+|      Tasks       |Version|     Filter     |n-shot|  Metric   |   |Value|   |Stderr|
+|------------------|------:|----------------|-----:|-----------|---|----:|---|-----:|
+|gsm8k_cot_zeroshot|      3|flexible-extract|     0|exact_match|↑  | 0.74|±  |0.0441|
+|                  |       |strict-match    |     0|exact_match|↑  | 0.00|±  |0.0000|
+

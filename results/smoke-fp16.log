@@ -1,0 +1,146 @@
+2026-10-25:14:50:41 WARNING  [__main__:359]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2026-10-25:14:50:41 INFO     [__main__:422] Selected Tasks: ['gsm8k_cot_zeroshot']
+2026-10-25:14:50:41 INFO     [evaluator:180] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-10-25:14:50:41 INFO     [evaluator:218] Initializing llada_dist model, with arguments: {'model_path': '/mnt/nvme/models/d3llm/d3LLM_LLaDA', 'gen_length': 256, 'steps': 256, 'block_length': 32, 'show_speed': True, 'threshold': 0.5, 'task': 'gsm8k_cot_zeroshot', 'generation_method': 'generate_multi_block_kv_cache', 'early_stop': True, 'cache_delay_iter': 2, 'refresh_interval': 3}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+
+================================================================================
+DEBUG: Initializing dparallel model (generation_method=generate_multi_block_kv_cache)
+DEBUG: __file__ = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA/eval_llada_v100.py
+DEBUG: Path(__file__).resolve().parent = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA
+DEBUG: dparallel_llada_path = /mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA
+DEBUG: Removing existing dparallel path from sys.path
+DEBUG: Inserted dparallel path at sys.path[0]
+DEBUG: sys.path[:3] = ['/mnt/nvme/d3llm-sm70/d3LLM/utils/utils_LLaDA', '/mnt/nvme/d3llm-sm70/d3LLM/utils/utils_Dream/eval_instruct', '/mnt/nvme/d3llm-sm70/d3LLM/d3llm/d3llm_LLaDA']
+DEBUG: Clearing cached modules: ['utils.utils_LLaDA.model.configuration_llada', 'utils.utils_LLaDA.model.modeling_llada']
+DEBUG: model directory exists? True
+DEBUG: modeling_llada.py exists? True
+DEBUG: Attempting to import from model.modeling_llada...
+DEBUG: Successfully imported LLaDAModelLM from model.modeling_llada
+================================================================================
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:17,  5.97s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:13<00:14,  7.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:19<00:06,  6.53s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  4.52s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.28s/it]
+Using fixed batch_size: 1
+Using generation method: generate_multi_block_kv_cache
+  temperature: 0.0
+  block_add_threshold: 0.1
+  decoded_token_threshold: 0.95
+  early_stop: True
+  cache_delay_iter: 2
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 7473/7473 [00:00<00:00, 91741.23 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1319/1319 [00:00<00:00, 361304.01 examples/s]
+2026-10-25:14:51:06 INFO     [evaluator:281] gsm8k_cot_zeroshot: Using gen_kwargs: {'until': ['Q:', '</s>', '<|im_end|>'], 'do_sample': False}
+2026-10-25:14:51:06 INFO     [evaluator:296] num_fewshot has been set to 0 for gsm8k_cot_zeroshot in its config. Manual configuration will be ignored.
+2026-10-25:14:51:06 INFO     [api.task:426] Building contexts for gsm8k_cot_zeroshot on rank 0...
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 4577.93it/s]
+2026-10-25:14:51:06 INFO     [evaluator:542] Running generate_until requests
+Generating...:   0%|          | 0/5 [00:00<?, ?it/s]Generating...:  20%|██        | 1/5 [00:05<00:23,  5.86s/it]/mnt/nvme/d3llm-sm70/.venv/lib/python3.12/site-packages/torch/_inductor/lowering.py:7627: UserWarning: 
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+/mnt/nvme/d3llm-sm70/.venv/lib/python3.12/site-packages/torch/_inductor/lowering.py:7627: UserWarning: 
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+Generating...:  40%|████      | 2/5 [00:09<00:14,  4.74s/it]Generating...:  60%|██████    | 3/5 [00:12<00:07,  3.96s/it]Generating...:  80%|████████  | 4/5 [00:14<00:03,  3.06s/it]Generating...: 100%|██████████| 5/5 [00:17<00:00,  3.03s/it]Generating...: 100%|██████████| 5/5 [00:17<00:00,  3.50s/it]
+2026-10-25:14:51:24 INFO     [loggers.evaluation_tracker:209] Saving results aggregated
+2026-10-25:14:51:24 INFO     [loggers.evaluation_tracker:290] Saving per-sample results for: gsm8k_cot_zeroshot
+====================
+question:  Q: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins f
+answer:  
+To determine how much money Janet makes every day at the farmers' market, we need to follow these s
+====================
+
+NFE (Number of Function Evaluations): 18
+
+============================================================
+GPU Stats at Step 1:
+  Number of GPUs: 2
+  GPU Memory Used: 12958.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.53%
+  GPU Utilization: 58.50%
+============================================================
+
+====================
+question:  Q: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does 
+answer:  
+To determine the total number of bolts required for the robe, we need to consider the amount of blu
+====================
+
+NFE (Number of Function Evaluations): 24
+
+============================================================
+GPU Stats at Step 2:
+  Number of GPUs: 2
+  GPU Memory Used: 12958.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.53%
+  GPU Utilization: 62.50%
+============================================================
+
+====================
+question:  Q: Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in re
+answer:  
+To determine Josh's profit, we need to follow these steps:
+
+1. **Calculate the total value of the h
+====================
+
+NFE (Number of Function Evaluations): 29
+
+============================================================
+GPU Stats at Step 3:
+  Number of GPUs: 2
+  GPU Memory Used: 12958.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.53%
+  GPU Utilization: 49.00%
+============================================================
+
+====================
+question:  Q: James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total me
+answer:  
+To determine the total number of meters James runs in a week, we need to break down the problem int
+====================
+
+NFE (Number of Function Evaluations): 16
+
+============================================================
+GPU Stats at Step 4:
+  Number of GPUs: 2
+  GPU Memory Used: 12958.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 57.53%
+  GPU Utilization: 60.50%
+============================================================
+
+====================
+question:  Q: Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, m
+answer:  
+To determine how many cups of feed Wendi needs to give her chickens in the final meal of the day, w
+====================
+
+NFE (Number of Function Evaluations): 27
+
+============================================================
+GPU Stats at Step 5:
+  Number of GPUs: 2
+  GPU Memory Used: 13507.00 MB
+  GPU Memory Total: 22525.00 MB
+  GPU Memory Usage: 59.96%
+  GPU Utilization: 61.50%
+============================================================
+
+llada_dist (model_path=/mnt/nvme/models/d3llm/d3LLM_LLaDA,gen_length=256,steps=256,block_length=32,show_speed=True,threshold=0.5,task=gsm8k_cot_zeroshot,generation_method=generate_multi_block_kv_cache,early_stop=True,cache_delay_iter=2,refresh_interval=3), gen_kwargs: (None), limit: 5.0, num_fewshot: 0, batch_size: 1
+|      Tasks       |Version|     Filter     |n-shot|  Metric   |   |Value|   |Stderr|
+|------------------|------:|----------------|-----:|-----------|---|----:|---|-----:|
+|gsm8k_cot_zeroshot|      3|flexible-extract|     0|exact_match|↑  |  0.8|±  |   0.2|
+|                  |       |strict-match    |     0|exact_match|↑  |  0.0|±  |   0.0|
+
