@@ -132,3 +132,8 @@ Notes on the measurements:
 - `run_d3llm.sh` (`GEN` sets gen_length and steps), `run_qwen.sh`, `run_qwen2.sh` (`MAXTOK`), `run_set.sh`
 - `rescore.py` and `hand_checked.json`. Run `python3 rescore.py results <arm> [<arm>]`.
 - `results/`: logs, lm_eval JSON, per-question samples, and `run_set.log`.
+
+## License
+MIT (see `LICENSE`) for the scripts, write-up and results in this repo. `eval_llada_v100.patch` and `patch_eval.py`
+quote a few lines of hao-ai-lab/d3LLM's `eval_llada.py`, which has no licence of its own. Those lines are not ours
+to license and are included only to show the change.
