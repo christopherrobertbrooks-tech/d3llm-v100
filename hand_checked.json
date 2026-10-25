@@ -1,0 +1,28 @@
+{
+  "_note": "Answers the extractor still misreads, judged by reading the final sentence (Claude, 2026-10-25). Only wrong-scored answers whose last 200 characters contain the gold number were read; listed doc_ids are correct, all others stay as scored.",
+  "qwen-q4km-512tok": {
+    "correct": [
+      5,
+      19,
+      43,
+      48,
+      55,
+      56,
+      78
+    ],
+    "wrong_confirmed": []
+  },
+  "d3llm-fp16-kvcache": {
+    "correct": [],
+    "wrong_confirmed": [
+      44,
+      51
+    ]
+  },
+  "d3llm-fp16-kvcache-512tok": {
+    "correct": [],
+    "wrong_confirmed": [
+      87
+    ]
+  }
+}

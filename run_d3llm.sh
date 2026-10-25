@@ -14,7 +14,7 @@ EXTRA=""
 HF_ALLOW_CODE_EVAL=1 HF_DATASETS_TRUST_REMOTE_CODE=true CUDA_VISIBLE_DEVICES=1 D3_DTYPE=${D3_DTYPE:-float16} \
 nice -n 10 $W/.venv/bin/python eval_llada_v100.py --tasks gsm8k_cot_zeroshot --num_fewshot 0 \
   --confirm_run_unsafe_code --model llada_dist \
-  --model_args model_path=/mnt/nvme/models/d3llm/d3LLM_LLaDA,gen_length=256,steps=256,block_length=32,show_speed=True,threshold=0.5,task=gsm8k_cot_zeroshot,generation_method=$METHOD,early_stop=True$EXTRA \
+  --model_args model_path=/mnt/nvme/models/d3llm/d3LLM_LLaDA,gen_length=${GEN:-256},steps=${GEN:-256},block_length=32,show_speed=True,threshold=0.5,task=gsm8k_cot_zeroshot,generation_method=$METHOD,early_stop=True$EXTRA \
   --batch_size 1 --limit $LIMIT --log_samples --output_path $W/results/$TAG > $W/results/$TAG.log 2>&1
 echo "rc=$? $(date +%r)"
 grep -a -E "Throughput|Tokens per forward|Total time taken" $W/results/$TAG.log | tail -3

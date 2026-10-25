@@ -1,0 +1,31 @@
+v100: waiting for the lock...
+v100: locked; clock 1380 MHz
+== d3llm d3llm-fp16-kvcache limit=100 method=generate_multi_block_kv_cache 02:51:41 PM RAM available 12 GiB
+rc=0 02:56:49 PM
+Total time taken (after warmup): 243.69554138183594 seconds
+  Throughput: 85.44 tokens/s
+  Tokens per forward: 8.98
+|gsm8k_cot_zeroshot|      3|flexible-extract|     0|exact_match|↑  | 0.74|±  |0.0441|
+|                  |       |strict-match    |     0|exact_match|↑  | 0.00|±  |0.0000|
+== qwen bench 02:56:49 PM
+bench rc=0
+| qwen2 7B Q4_K - Medium         |   4.36 GiB |     7.62 B | CUDA       |  99 |           pp512 |      2220.48 ± 33.84 |
+| qwen2 7B Q4_K - Medium         |   4.36 GiB |     7.62 B | CUDA       |  99 |           tg128 |        111.19 ± 0.08 |
+== qwen gsm8k limit=100 02:56:59 PM
+lm_eval rc=1 02:57:08 PM
+== d3llm d3llm-bf16-kvcache limit=100 method=generate_multi_block_kv_cache 02:57:08 PM RAM available 12 GiB
+rc=0 03:21:58 PM
+Total time taken (after warmup): 1285.4773814678192 seconds
+  Throughput: 16.33 tokens/s
+  Tokens per forward: 9.07
+|gsm8k_cot_zeroshot|      3|flexible-extract|     0|exact_match|↑  | 0.72|±  |0.0451|
+|                  |       |strict-match    |     0|exact_match|↑  | 0.00|±  |0.0000|
+== d3llm d3llm-fp16-multiblock limit=100 method=generate_multi_block 03:21:58 PM RAM available 12 GiB
+rc=0 03:27:37 PM
+Total time taken (after warmup): 271.32435846328735 seconds
+  Throughput: 76.93 tokens/s
+  Tokens per forward: 8.82
+|gsm8k_cot_zeroshot|      3|flexible-extract|     0|exact_match|↑  | 0.73|±  |0.0446|
+|                  |       |strict-match    |     0|exact_match|↑  | 0.00|±  |0.0000|
+== set done 03:27:37 PM
+v100: clock restored; released
