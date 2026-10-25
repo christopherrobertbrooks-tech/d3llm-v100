@@ -10,14 +10,14 @@ Apache-2.0) work in fp16 and stay close to its published GSM8K score? And is it 
 autoregressive baseline, Qwen2.5-7B-Instruct Q4_K_M in llama.cpp?
 
 ## Answer
-d3LLM works in fp16 on Volta with no accuracy loss. But llama.cpp's Qwen2.5-7B Q4 beats it on accuracy, speed and
-memory:
-- Both get a 512-token budget: Qwen scores 91% to d3LLM's 84%.
-- Qwen answers in 2.48 s per question against 4.74 s.
-- Qwen uses 5.0 GiB of GPU memory against 22 GiB.
+d3LLM works in fp16 on Volta with no accuracy loss. Against llama.cpp's Qwen2.5-7B Q4, both at a 512-token budget:
+- **Speed:** Qwen answers in 2.48 s per question against 4.74 s, about 1.9x faster.
+- **Memory:** Qwen uses 5.0 GiB of GPU memory against 22 GiB, about 4x smaller.
+- **Accuracy:** Qwen scores 91% to d3LLM's 84%. That's higher on this sample, but not clearly significant at n=100
+  (paired 10 vs 3, sign test p ≈ 0.09).
 
-The paper's 3.6-5x speedup is measured against Hugging Face `generate` on newer GPUs. It does not carry over
-against a real engine on this card.
+The paper's 3.6-5x speedup does not carry over to this comparison on this card. Its baseline is described in the
+idea file (from the paper, not re-checked by us) as Hugging Face `generate` on newer GPUs.
 
 ## Setup
 **d3LLM.** Its own `eval_llada.py`, run from a local copy `eval_llada_v100.py` (`eval_llada_v100.patch`) with two
@@ -26,8 +26,9 @@ changes:
 - It loads straight onto the GPU through `device_map`. A single-process run otherwise loads all 16 GB into host RAM
   first, and the gateway has only 16 GB.
 
-flash-attn is not installed in the venv (checked with the venv's own Python), so `modeling_llada.py:613-619` falls
-back to PyTorch SDPA.
+flash-attn is not installed in the venv (checked with the venv's own Python), so `modeling_llada.py:613-619` should
+fall back to PyTorch SDPA. **The SDPA path is inferred from the code, not logged**: no run recorded which attention
+path executed.
 
 The settings are the paper's GSM8K ones (`eval_scripts/llada_gsm8k_cot.sh`): `steps = gen_length, block_length=32,
 threshold=0.5, early_stop=True`, with `generate_multi_block_kv_cache` (`cache_delay_iter=2, refresh_interval=3`) or
@@ -90,13 +91,12 @@ Notes on the measurements:
    - Every response is real text, with no NaN.
    - bf16 on the V100 is 5.2x slower (16.3 against 85.4 tok/s), because the card has no bf16 tensor cores. Use fp16.
 2. **llama.cpp Q4 beats it at equal budgets.**
-   - At 512 tokens each, Qwen is 7 points more accurate (91 against 84, paired 10 to 3) and 1.9x faster per
-     question (2.48 s against 4.74 s).
-   - It also uses about 4.5x less GPU memory (5.0 against 22.3 GiB).
-   - d3LLM's advantage in the paper comes from comparing it with Hugging Face `generate` on newer GPUs.
+   - At 512 tokens each, Qwen is 1.9x faster per question (2.48 s against 4.74 s).
+   - It uses about 4.5x less GPU memory (5.0 against 22.3 GiB).
+   - Qwen scores higher on this sample, but not clearly significant at n=100: 91 against 84, paired 10 vs 3, sign
+     test p ≈ 0.09.
 3. **d3LLM gets slower per token as the budget grows.** It drops from 85.4 tok/s at 256 tokens to 61.6 at 512,
-   even though tokens per forward rise from 8.98 to 10.35. Longer generations mean more blocks and longer
-   attention.
+   even though tokens per forward rise from 8.98 to 10.35. The cause was not measured, since no profile was taken.
 4. **The paper's 256-token budget cuts off both models, Qwen more.**
    - Qwen: 52 of its 100 answers hit the cap (51% rescored), against 2 at 512 tokens.
    - d3LLM: 22 answers sit exactly at 256 tokens (Grok's count with the LLaDA tokenizer, #3), and moving to 512
@@ -107,7 +107,8 @@ Notes on the measurements:
    reads the last number in the closing sentence. The first write-up's "75% against 74%, a tie" came from that.
 
 ## Caveats
-- n=100. The 7-point gap at 512 tokens is outside the ±4 noise and paired 10 to 3, but it isn't a precise estimate.
+- n=100. The 7-point accuracy gap at 512 tokens is not clearly significant: paired 10 vs 3, two-sided sign test
+  p ≈ 0.09. The speed (1.9x) and memory (about 4x) differences are the solid results.
 - The hand check reads only the wrong-scored answers with the gold number near the end. A misread answer that
   restates the result in other words would be missed. This affects both models alike.
 - The prompts differ: d3LLM gets the raw lm_eval prompt (the paper's path) and Qwen gets its chat template. That
